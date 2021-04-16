@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class UserInfo implements Serializable {
     private Integer userId;
 
-    private String userName;
+    private String userName;/** 账户名称*/
 
     private String userPassword;
 
