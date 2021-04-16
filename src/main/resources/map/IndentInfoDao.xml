@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="IndentInfoDao">
+  <resultMap id="BaseResultMap" type="IndentInfo">
+    <id column="indent_id" jdbcType="INTEGER" property="indentId" />
+    <result column="indent_creatTime" jdbcType="VARCHAR" property="indentCreattime" />
+    <result column="indent_ornament_id" jdbcType="INTEGER" property="indentOrnamentId" />
+    <result column="indent_user1_id" jdbcType="INTEGER" property="indentUser1Id" />
+    <result column="indent_user2_id" jdbcType="INTEGER" property="indentUser2Id" />
+    <result column="indent_detail" jdbcType="VARCHAR" property="indentDetail" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    indent_id, indent_creatTime, indent_ornament_id, indent_user1_id, indent_user2_id, 
+    indent_detail
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from indent_info
+    where indent_id = #{indentId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from indent_info
+    where indent_id = #{indentId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="indent_id" keyProperty="indentId" parameterType="IndentInfo" useGeneratedKeys="true">
+    insert into indent_info (indent_creatTime, indent_ornament_id, 
+      indent_user1_id, indent_user2_id, indent_detail
+      )
+    values (#{indentCreattime,jdbcType=VARCHAR}, #{indentOrnamentId,jdbcType=INTEGER}, 
+      #{indentUser1Id,jdbcType=INTEGER}, #{indentUser2Id,jdbcType=INTEGER}, #{indentDetail,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="indent_id" keyProperty="indentId" parameterType="IndentInfo" useGeneratedKeys="true">
+    insert into indent_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="indentCreattime != null">
+        indent_creatTime,
+      </if>
+      <if test="indentOrnamentId != null">
+        indent_ornament_id,
+      </if>
+      <if test="indentUser1Id != null">
+        indent_user1_id,
+      </if>
+      <if test="indentUser2Id != null">
+        indent_user2_id,
+      </if>
+      <if test="indentDetail != null">
+        indent_detail,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="indentCreattime != null">
+        #{indentCreattime,jdbcType=VARCHAR},
+      </if>
+      <if test="indentOrnamentId != null">
+        #{indentOrnamentId,jdbcType=INTEGER},
+      </if>
+      <if test="indentUser1Id != null">
+        #{indentUser1Id,jdbcType=INTEGER},
+      </if>
+      <if test="indentUser2Id != null">
+        #{indentUser2Id,jdbcType=INTEGER},
+      </if>
+      <if test="indentDetail != null">
+        #{indentDetail,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="IndentInfo">
+    update indent_info
+    <set>
+      <if test="indentCreattime != null">
+        indent_creatTime = #{indentCreattime,jdbcType=VARCHAR},
+      </if>
+      <if test="indentOrnamentId != null">
+        indent_ornament_id = #{indentOrnamentId,jdbcType=INTEGER},
+      </if>
+      <if test="indentUser1Id != null">
+        indent_user1_id = #{indentUser1Id,jdbcType=INTEGER},
+      </if>
+      <if test="indentUser2Id != null">
+        indent_user2_id = #{indentUser2Id,jdbcType=INTEGER},
+      </if>
+      <if test="indentDetail != null">
+        indent_detail = #{indentDetail,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where indent_id = #{indentId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="IndentInfo">
+    update indent_info
+    set indent_creatTime = #{indentCreattime,jdbcType=VARCHAR},
+      indent_ornament_id = #{indentOrnamentId,jdbcType=INTEGER},
+      indent_user1_id = #{indentUser1Id,jdbcType=INTEGER},
+      indent_user2_id = #{indentUser2Id,jdbcType=INTEGER},
+      indent_detail = #{indentDetail,jdbcType=VARCHAR}
+    where indent_id = #{indentId,jdbcType=INTEGER}
+  </update>
+</mapper>

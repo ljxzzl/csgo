@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="FavoriteInfoDao">
+  <resultMap id="BaseResultMap" type="FavoriteInfo">
+    <id column="favorite_id" jdbcType="INTEGER" property="favoriteId" />
+    <result column="favorite_ornament_id" jdbcType="INTEGER" property="favoriteOrnamentId" />
+    <result column="favorite_user_id" jdbcType="INTEGER" property="favoriteUserId" />
+    <result column="favorite_class_id" jdbcType="INTEGER" property="favoriteClassId" />
+    <result column="favorite_detail" jdbcType="VARCHAR" property="favoriteDetail" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    favorite_id, favorite_ornament_id, favorite_user_id, favorite_class_id, favorite_detail
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from favorite_info
+    where favorite_id = #{favoriteId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from favorite_info
+    where favorite_id = #{favoriteId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="favorite_id" keyProperty="favoriteId" parameterType="FavoriteInfo" useGeneratedKeys="true">
+    insert into favorite_info (favorite_ornament_id, favorite_user_id, 
+      favorite_class_id, favorite_detail)
+    values (#{favoriteOrnamentId,jdbcType=INTEGER}, #{favoriteUserId,jdbcType=INTEGER}, 
+      #{favoriteClassId,jdbcType=INTEGER}, #{favoriteDetail,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="favorite_id" keyProperty="favoriteId" parameterType="FavoriteInfo" useGeneratedKeys="true">
+    insert into favorite_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="favoriteOrnamentId != null">
+        favorite_ornament_id,
+      </if>
+      <if test="favoriteUserId != null">
+        favorite_user_id,
+      </if>
+      <if test="favoriteClassId != null">
+        favorite_class_id,
+      </if>
+      <if test="favoriteDetail != null">
+        favorite_detail,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="favoriteOrnamentId != null">
+        #{favoriteOrnamentId,jdbcType=INTEGER},
+      </if>
+      <if test="favoriteUserId != null">
+        #{favoriteUserId,jdbcType=INTEGER},
+      </if>
+      <if test="favoriteClassId != null">
+        #{favoriteClassId,jdbcType=INTEGER},
+      </if>
+      <if test="favoriteDetail != null">
+        #{favoriteDetail,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="FavoriteInfo">
+    update favorite_info
+    <set>
+      <if test="favoriteOrnamentId != null">
+        favorite_ornament_id = #{favoriteOrnamentId,jdbcType=INTEGER},
+      </if>
+      <if test="favoriteUserId != null">
+        favorite_user_id = #{favoriteUserId,jdbcType=INTEGER},
+      </if>
+      <if test="favoriteClassId != null">
+        favorite_class_id = #{favoriteClassId,jdbcType=INTEGER},
+      </if>
+      <if test="favoriteDetail != null">
+        favorite_detail = #{favoriteDetail,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where favorite_id = #{favoriteId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="FavoriteInfo">
+    update favorite_info
+    set favorite_ornament_id = #{favoriteOrnamentId,jdbcType=INTEGER},
+      favorite_user_id = #{favoriteUserId,jdbcType=INTEGER},
+      favorite_class_id = #{favoriteClassId,jdbcType=INTEGER},
+      favorite_detail = #{favoriteDetail,jdbcType=VARCHAR}
+    where favorite_id = #{favoriteId,jdbcType=INTEGER}
+  </update>
+</mapper>

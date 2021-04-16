@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OrnamentInfoDao">
+  <resultMap id="BaseResultMap" type="OrnamentInfo">
+    <id column="ornament_id" jdbcType="INTEGER" property="ornamentId" />
+    <result column="ornament_name" jdbcType="VARCHAR" property="ornamentName" />
+    <result column="ornament _price" jdbcType="VARCHAR" property="ornamentPrice" />
+    <result column="ornament _class" jdbcType="VARCHAR" property="ornamentClass" />
+    <result column="ornament _image" jdbcType="VARCHAR" property="ornamentImage" />
+    <result column="ornament _status" jdbcType="VARCHAR" property="ornamentStatus" />
+    <result column="ornament_count" jdbcType="VARCHAR" property="ornamentCount" />
+    <result column="ornament_detail" jdbcType="VARCHAR" property="ornamentDetail" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ornament_id, ornament_name, `ornament _price`, `ornament _class`, `ornament _image`, 
+    `ornament _status`, ornament_count, ornament_detail
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ornament_info
+    where ornament_id = #{ornamentId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ornament_info
+    where ornament_id = #{ornamentId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="ornament_id" keyProperty="ornamentId" parameterType="OrnamentInfo" useGeneratedKeys="true">
+    insert into ornament_info (ornament_name, `ornament _price`, `ornament _class`, 
+      `ornament _image`, `ornament _status`, ornament_count, 
+      ornament_detail)
+    values (#{ornamentName,jdbcType=VARCHAR}, #{ornamentPrice,jdbcType=VARCHAR}, #{ornamentClass,jdbcType=VARCHAR}, 
+      #{ornamentImage,jdbcType=VARCHAR}, #{ornamentStatus,jdbcType=VARCHAR}, #{ornamentCount,jdbcType=VARCHAR}, 
+      #{ornamentDetail,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="ornament_id" keyProperty="ornamentId" parameterType="OrnamentInfo" useGeneratedKeys="true">
+    insert into ornament_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ornamentName != null">
+        ornament_name,
+      </if>
+      <if test="ornamentPrice != null">
+        `ornament _price`,
+      </if>
+      <if test="ornamentClass != null">
+        `ornament _class`,
+      </if>
+      <if test="ornamentImage != null">
+        `ornament _image`,
+      </if>
+      <if test="ornamentStatus != null">
+        `ornament _status`,
+      </if>
+      <if test="ornamentCount != null">
+        ornament_count,
+      </if>
+      <if test="ornamentDetail != null">
+        ornament_detail,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ornamentName != null">
+        #{ornamentName,jdbcType=VARCHAR},
+      </if>
+      <if test="ornamentPrice != null">
+        #{ornamentPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="ornamentClass != null">
+        #{ornamentClass,jdbcType=VARCHAR},
+      </if>
+      <if test="ornamentImage != null">
+        #{ornamentImage,jdbcType=VARCHAR},
+      </if>
+      <if test="ornamentStatus != null">
+        #{ornamentStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="ornamentCount != null">
+        #{ornamentCount,jdbcType=VARCHAR},
+      </if>
+      <if test="ornamentDetail != null">
+        #{ornamentDetail,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="OrnamentInfo">
+    update ornament_info
+    <set>
+      <if test="ornamentName != null">
+        ornament_name = #{ornamentName,jdbcType=VARCHAR},
+      </if>
+      <if test="ornamentPrice != null">
+        `ornament _price` = #{ornamentPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="ornamentClass != null">
+        `ornament _class` = #{ornamentClass,jdbcType=VARCHAR},
+      </if>
+      <if test="ornamentImage != null">
+        `ornament _image` = #{ornamentImage,jdbcType=VARCHAR},
+      </if>
+      <if test="ornamentStatus != null">
+        `ornament _status` = #{ornamentStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="ornamentCount != null">
+        ornament_count = #{ornamentCount,jdbcType=VARCHAR},
+      </if>
+      <if test="ornamentDetail != null">
+        ornament_detail = #{ornamentDetail,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ornament_id = #{ornamentId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="OrnamentInfo">
+    update ornament_info
+    set ornament_name = #{ornamentName,jdbcType=VARCHAR},
+      `ornament _price` = #{ornamentPrice,jdbcType=VARCHAR},
+      `ornament _class` = #{ornamentClass,jdbcType=VARCHAR},
+      `ornament _image` = #{ornamentImage,jdbcType=VARCHAR},
+      `ornament _status` = #{ornamentStatus,jdbcType=VARCHAR},
+      ornament_count = #{ornamentCount,jdbcType=VARCHAR},
+      ornament_detail = #{ornamentDetail,jdbcType=VARCHAR}
+    where ornament_id = #{ornamentId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ClassInfoDao">
+  <resultMap id="BaseResultMap" type="ClassInfo">
+    <id column="class_id" jdbcType="INTEGER" property="classId" />
+    <result column="class_name" jdbcType="VARCHAR" property="className" />
+    <result column="class_detial" jdbcType="VARCHAR" property="classDetial" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    class_id, class_name, class_detial
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from class_info
+    where class_id = #{classId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from class_info
+    where class_id = #{classId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="class_id" keyProperty="classId" parameterType="ClassInfo" useGeneratedKeys="true">
+    insert into class_info (class_name, class_detial)
+    values (#{className,jdbcType=VARCHAR}, #{classDetial,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="class_id" keyProperty="classId" parameterType="ClassInfo" useGeneratedKeys="true">
+    insert into class_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="className != null">
+        class_name,
+      </if>
+      <if test="classDetial != null">
+        class_detial,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="className != null">
+        #{className,jdbcType=VARCHAR},
+      </if>
+      <if test="classDetial != null">
+        #{classDetial,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="ClassInfo">
+    update class_info
+    <set>
+      <if test="className != null">
+        class_name = #{className,jdbcType=VARCHAR},
+      </if>
+      <if test="classDetial != null">
+        class_detial = #{classDetial,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where class_id = #{classId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="ClassInfo">
+    update class_info
+    set class_name = #{className,jdbcType=VARCHAR},
+      class_detial = #{classDetial,jdbcType=VARCHAR}
+    where class_id = #{classId,jdbcType=INTEGER}
+  </update>
+</mapper>
