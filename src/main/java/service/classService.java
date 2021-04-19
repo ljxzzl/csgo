@@ -1,5 +1,6 @@
 package service;
 
+import org.springframework.stereotype.Service;
 import pojo.ClassInfo;
 import pojo.OrnamentInfo;
 import pojo.UserInfo;
