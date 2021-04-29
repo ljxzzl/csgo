@@ -1,0 +1,21 @@
+package com.example.demo.config;
+
+public class AlipayConfig { //客户appid
+    public static String APPID="2021000117645826";
+    //私钥
+    public static String RSA_PRIVATE_KEY="MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDCKSO4pQOE3OgWhupW8IqDkbU3h5AH8ha+aiMM9dvLLHngpILu5rvT1GefYjW/m1z/2OrsYpkt2FRs1qtkfZjC5htccLLEuXfrrlfKRoY77OIA4veyOOniqkuet1GmUITy3Ah3JQYhxI/NI08NIAjH/oP4nFL2djT9zTaklxJ4WuoVkqmwUiWMqlEvjPubfq+iVoA/e8bQ3umw7xJUawCuBzgWY0riG39yFhymEMbWJKvfowfPd79+LhqbxESkqvSd2gu9T7C5gLJSFd7rQyjxx03lKUqJQYnWSCgdzJasGFPZTjGZkwhi28QERzUcg76CqUh1W08cMeINoF7ix4EjAgMBAAECggEAEDknxvHizWM38Unsor8Ok9fE8JLfMgrEY7yymQ6iAuQAewjD9/pHj3ecAPFP1GbC6o3Rc1b5vZ7pzv5Q6+CitwZLGvo/tbhZkNPMehZSeQdeCvzr/XRL9qiMEQL4S5FGypQgEPSDAqdN7LIalNosYamelVNai0VtQBe5jR8iZ/PrWGrslwY7H6FmMuKGx0kKQIB9HgHiMCnIrWRPJooTWV0CfIaFNyVU3ikcuR/z7/poIFO6aiaixvOWoE7R/dgAWIxD65Q4GyfZ8YkqoXhcnZEXIzkhppoVmuQa7yL4+sJY/T/zTG+fRfXbRZgjSxwjJlgJuVWPxtmnSASEGjHs4QKBgQD0lT04174m4/e5LtIzFrbkjSL8huKWLRfBNnFh4vQmbDdhVbtL9sG9nERAeU3oWDFEvXysJ5f2Yrr18fSUFW2ZGxTk5M3A0+0eBbgN/IV2nyL/4DmebsQdp1CEWmvFWcF3A7gBLQpbn1KMgDoufezgiaNKfE2r3xs3IoIV5YcONQKBgQDLOVsA7iNSWNM7nNbBU/uFEtRBx/qbUd/NcvcGhBtShdy/rhisj/oDfsXxwxNqXpzRaEfjs8r8RToI/hRlureNOf/Y3/sgW8LWniBJPGRmr3/+h9J1sxevpOIMtFRIi5eTXO3dkNymhNbDanW0AGpxZeTj6oA3InfOjpBZIZ8c9wKBgQDu2rgZRQgcbtFD9eetoOcnuHWMbCXoR01FkWeVEtEgnNpQoirxep+mDm/RDyX4W/hxiyOv9FLBeZXgDlSuMWcA+KOlDZWqVMziXu9qKUwlli/V9yIOCVpZI0bMmolZB9iZ4/XUoCnXZHZ3Y9puAOhON9xSJ6aqzI2FgJvNyoPkaQKBgGuDvJGRaz51n8s5/qPpOnf8ri7fDcZ+WljnKalY2tud1lvST1t8EFkpCLAO9Iah53UiJmZhCFLOjRWU1lW7osAknyat2L4Vzc6deZdFTBjHYH/Ye4+pYC6cnLr77Fs0/swHrhA6Q4IVZUmdWQgR8D5uGdo6hfqlUZ0F73g4QWWhAoGAHOZ7BT7N9q/thWNMeX90bs5kOY1IKqZbzlaJqnmoyqy4vgais7WYGpfZHF2AT39iqTZthEQgHagHaSDMkc8L8saBo4Jc84I8ugzOq8JYpnCltgGsNKPmydBS2uiScK3GfLDYzMyNpHTKSGGXZjn7STab0VzfQMcShP0YczVt7PQ=";
+    //服务器异步通知页面路径
+    public static String notify_url="http://www.baidu.com";
+    public static String return_url="http://www.baidu.com";
+    //请求网关地址
+    public static String URL="https://openapi.alipaydev.com/gateway.do";
+    //编码
+    public static String CHARSET = "UTF-8";
+    //返回格式
+    public static String FORMAT="json";
+    //支付宝公钥
+    public static String ALIPAY_PUBLIC_KEY="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwikjuKUDhNzoFobqVvCKg5G1N4eQB/IWvmojDPXbyyx54KSC7ua709Rnn2I1v5tc/9jq7GKZLdhUbNarZH2YwuYbXHCyxLl3665XykaGO+ziAOL3sjjp4qpLnrdRplCE8twIdyUGIcSPzSNPDSAIx/6D+JxS9nY0/c02pJcSeFrqFZKpsFIljKpRL4z7m36volaAP3vG0N7psO8SVGsArgc4FmNK4ht/chYcphDG1iSr36MHz3e/fi4am8REpKr0ndoLvU+wuYCyUhXe60Mo8cdN5SlKiUGJ1kgoHcyWrBhT2U4xmZMIYtvEBEc1HIO+gqlIdVtPHDHiDaBe4seBIwIDAQAB";
+    //RSA2
+    public static String SIGNTYPE="RSA2";
+
+}
