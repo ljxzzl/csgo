@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.UUID;
 @RestController
 public class OrderController {
-    @PostMapping("/oalipay")
+    @PostMapping(value = "/oalipay",produces = "text/html;charset=UTF-8")
     public String alipay(String out_trade_no,String subject,String total_amount,String body,String product_code) throws AlipayApiException {
         AlipayConfig alipayConfig = new AlipayConfig();
         //封装RSA签名方式

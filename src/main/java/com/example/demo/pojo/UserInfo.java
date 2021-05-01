@@ -1,5 +1,6 @@
 package com.example.demo.pojo;
 
+import javax.persistence.Table;
 import java.io.Serializable;
 
 /**
@@ -7,13 +8,30 @@ import java.io.Serializable;
  * @author 
  */
 public class UserInfo implements Serializable {
-    private Integer userId;
+
+    private Integer userId;//不需要增加
 
     private String userName;/** 账户名称*/
 
     private String userPassword;
 
     private String userIphone;
+
+    public String getUserSteamId() {
+        return userSteamId;
+    }
+
+    public void setUserSteamId(String userSteamId) {
+        this.userSteamId = userSteamId;
+    }
+
+    public String getUserSteamKey() {
+        return userSteamKey;
+    }
+
+    public void setUserSteamKey(String userSteamkey) {
+        this.userSteamKey = userSteamkey;
+    }
 
     private String userUrl;
 
@@ -23,13 +41,14 @@ public class UserInfo implements Serializable {
     private String userEmail;
 
     /**
-     * 付款账户 对接api用
+     * api key注入
 
      */
     private String userAccount;
 
     private String userDetail;
-
+    private String userSteamId;
+    private String userSteamKey;
     private static final long serialVersionUID = 1L;
 
     public Integer getUserId() {

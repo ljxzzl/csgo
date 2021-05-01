@@ -1,7 +1,9 @@
 package com.example.demo.dao;
 
 import com.example.demo.pojo.FavoriteInfo;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface FavoriteInfoDao {
     int deleteByPrimaryKey(Integer favoriteId);
 

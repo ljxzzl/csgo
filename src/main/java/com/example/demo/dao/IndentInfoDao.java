@@ -1,7 +1,9 @@
 package com.example.demo.dao;
 
 import com.example.demo.pojo.IndentInfo;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface IndentInfoDao {
     int deleteByPrimaryKey(Integer indentId);
 

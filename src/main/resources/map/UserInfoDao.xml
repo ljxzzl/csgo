@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="UserInfoDao">
-  <resultMap id="BaseResultMap" type="UserInfo">
+<mapper namespace="com.example.demo.dao.UserInfoDao">
+  <resultMap id="BaseResultMap" type="com.example.demo.pojo.UserInfo">
     <id column="user_id" jdbcType="INTEGER" property="userId" />
     <result column="user_name" jdbcType="VARCHAR" property="userName" />
     <result column="user_password" jdbcType="VARCHAR" property="userPassword" />
@@ -10,10 +10,12 @@
     <result column="user_email" jdbcType="VARCHAR" property="userEmail" />
     <result column="user_account" jdbcType="VARCHAR" property="userAccount" />
     <result column="user_detail" jdbcType="VARCHAR" property="userDetail" />
+    <result column="user_steam_id" jdbcType="VARCHAR" property="userSteamId" />
+    <result column="user_steam_key" jdbcType="VARCHAR" property="userSteamKey" />
   </resultMap>
   <sql id="Base_Column_List">
     user_id, user_name, user_password, user_iphone, user_url, user_email, user_account, 
-    user_detail
+    user_detail,user_steam_id,user_steam_key
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -21,6 +23,12 @@
     from user_info
     where user_id = #{userId,jdbcType=INTEGER}
   </select>
+
+  <select id="getUserList" parameterType="Object" resultMap="BaseResultMap">
+    select * from user_info
+  </select>
+
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from user_info
     where user_id = #{userId,jdbcType=INTEGER}
@@ -28,10 +36,10 @@
   <insert id="insert" keyColumn="user_id" keyProperty="userId" parameterType="UserInfo" useGeneratedKeys="true">
     insert into user_info (user_name, user_password, user_iphone, 
       user_url, user_email, user_account, 
-      user_detail)
+      user_detail,user_steam_id,user_steam_key)
     values (#{userName,jdbcType=VARCHAR}, #{userPassword,jdbcType=VARCHAR}, #{userIphone,jdbcType=VARCHAR}, 
       #{userUrl,jdbcType=VARCHAR}, #{userEmail,jdbcType=VARCHAR}, #{userAccount,jdbcType=VARCHAR}, 
-      #{userDetail,jdbcType=VARCHAR})
+      #{userDetail,jdbcType=VARCHAR} , #{userSteamId,jdbcType=VARCHAR} ,#{userSteamKey,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" keyColumn="user_id" keyProperty="userId" parameterType="UserInfo" useGeneratedKeys="true">
     insert into user_info
@@ -117,7 +125,10 @@
       user_url = #{userUrl,jdbcType=VARCHAR},
       user_email = #{userEmail,jdbcType=VARCHAR},
       user_account = #{userAccount,jdbcType=VARCHAR},
-      user_detail = #{userDetail,jdbcType=VARCHAR}
+      user_detail = #{userDetail,jdbcType=VARCHAR},
+     user_steam_id=#{userSteamId,jdbcType=VARCHAR},
+     user_steam_key=#{userSteamKey,jdbcType=VARCHAR}
+
     where user_id = #{userId,jdbcType=INTEGER}
   </update>
 </mapper>

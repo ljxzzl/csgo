@@ -1,6 +1,8 @@
 package com.example.demo.serviceIpl;
 
 import com.example.demo.dao.AdminInfoDao;
+import com.example.demo.dao.OrnamentInfoDao;
+import com.example.demo.dao.UserInfoDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.demo.pojo.OrnamentInfo;
@@ -14,6 +16,10 @@ public class adminIpl implements adminService {
 
 @Autowired
     AdminInfoDao admin;
+@Autowired
+    UserInfoDao user;
+    @Autowired
+    OrnamentInfoDao ornament;
 /*
 @Autowired
     UserInfoDao user;
@@ -24,19 +30,10 @@ public class adminIpl implements adminService {
 
     @Override
     public int login(String account, String password) {
-        return admin.login(account, password);
+        return Integer.parseInt(null);
         //登录
     }
 
-    @Override
-    public List<UserInfo> List() {
-        return admin.List();//用户
-    }
-
-    @Override
-    public List<OrnamentInfo> OrnamentList() {
-        return admin.OrnamentList();//全部商品
-    }
 
 
 }

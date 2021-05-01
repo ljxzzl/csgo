@@ -1,6 +1,7 @@
 package com.example.demo.dao;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.ResultType;
 import org.apache.ibatis.annotations.Select;
 import com.example.demo.pojo.AdminInfo;
 import com.example.demo.pojo.OrnamentInfo;
@@ -22,13 +23,9 @@ public interface AdminInfoDao {
 
     int updateByPrimaryKey(AdminInfo record);//非空更新判断
 
-    @Select("select * from user_info")
-    List<UserInfo> List();
 
-    @Select("select * from ornament_info")
-    List<OrnamentInfo> OrnamentList();
-    @Select("select * from account_info where admin_account=#{account} and admin_password=#{password} ")
-    int  login (String account ,String password);
+//    @Select("select * from account_info where admin_account=#{account} and admin_password=#{password} ")
+   // int  login (String account ,String password);//未写
 
 
 

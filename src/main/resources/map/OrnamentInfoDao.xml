@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="OrnamentInfoDao">
+<mapper namespace="com.example.demo.dao.OrnamentInfoDao">
   <resultMap id="BaseResultMap" type="OrnamentInfo">
     <id column="ornament_id" jdbcType="INTEGER" property="ornamentId" />
     <result column="ornament_name" jdbcType="VARCHAR" property="ornamentName" />
