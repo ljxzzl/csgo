@@ -14,10 +14,11 @@ public interface userService {
      * @param request
      * @return
      */
-    int  login (String email ,String password);
+   UserInfo  login (String email ,String password);
      int  buyOnament(UserInfo user, OrnamentInfo ornament);
-     int  steama_bind(String steam_id ,String apikey,String url);//绑定steam
-    int  invest(int id ,String money);// 通过账户 id 更新充值
+     int  steama_bind(UserInfo user);//绑定steam
+    int  invest(UserInfo user);// 通过账户 id 更新充值
     List<UserInfo> getUserList();
-    int check(String name ,String email);//是否重复明检测
+    int check(String name ,String email);//是否重复名称检测
+    int  stock_ornament(UserInfo user);//检测库存steam
 }

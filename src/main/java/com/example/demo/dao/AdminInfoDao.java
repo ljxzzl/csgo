@@ -24,9 +24,6 @@ public interface AdminInfoDao {
     int updateByPrimaryKey(AdminInfo record);//非空更新判断
 
 
-//    @Select("select * from account_info where admin_account=#{account} and admin_password=#{password} ")
-   // int  login (String account ,String password);//未写
-
 
 
 }

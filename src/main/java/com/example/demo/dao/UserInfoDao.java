@@ -22,11 +22,11 @@ public interface UserInfoDao {
 
     int updateByPrimaryKey(UserInfo record);
 
-    int  login (String email ,String password);
+    UserInfo  login (String email ,String password);
     int  buyOnament(UserInfo user, OrnamentInfo ornament);
-    int  steama_bind(String steam_id ,String apikey,String url);//绑定steam
-    int  invest(int id ,String money);// 通过账户 id 更新充值
-    int check(String name ,String email);//是否重复明检测
+//    int  steama_bind(String steam_id ,String apikey,String url);//绑定steam
+//    int  invest(int id ,String money);// 通过账户 id 更新充值
+    int check(String name ,String email);//是否重复名字检测
     List<UserInfo> getUserList();
 
 

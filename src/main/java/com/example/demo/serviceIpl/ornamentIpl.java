@@ -11,6 +11,8 @@ public class ornamentIpl implements ornamentService {
         return 0;
     }
 
+
+
     @Override
     public List<OrnamentInfo> ornamentList() {
         return null;

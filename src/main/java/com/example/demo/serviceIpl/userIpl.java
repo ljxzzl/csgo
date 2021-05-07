@@ -20,7 +20,7 @@ public class userIpl implements userService {
     }
 
     @Override
-    public int login(String email, String password) {
+    public UserInfo login(String email, String password) {
         return userdao.login(email, password);
     }
 
@@ -30,14 +30,15 @@ public class userIpl implements userService {
     }
 
     @Override
-    public int steama_bind(String steam_id, String apikey,String url) {
-        return userdao.steama_bind(steam_id, apikey, url);
+    public int steama_bind(UserInfo user) {
+        return userdao.updateByPrimaryKey(user);
     }
 
     @Override
-    public int invest(int id, String money) {
-        return userdao.invest(id, money);
+    public int invest(UserInfo user) {
+        return userdao.updateByPrimaryKey(user);
     }
+
 
     @Override
     public List<UserInfo> getUserList() {
@@ -48,5 +49,11 @@ public class userIpl implements userService {
     public int check(String name, String email) {
         return userdao.check(name, email);
     }
+
+    @Override
+    public int stock_ornament(UserInfo user) {
+        return 0;
+    }
+
 }
 

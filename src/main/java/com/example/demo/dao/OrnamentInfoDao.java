@@ -20,5 +20,6 @@ public interface OrnamentInfoDao {
 
     int updateByPrimaryKey(OrnamentInfo record);
 
-    List<OrnamentInfo> OrnamentList();
+    List<OrnamentInfo> OrnamentList();//全部商品列表各种状态
+
 }

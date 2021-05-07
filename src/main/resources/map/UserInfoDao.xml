@@ -27,6 +27,12 @@
   <select id="getUserList" parameterType="Object" resultMap="BaseResultMap">
     select * from user_info
   </select>
+  <select id="login" parameterType="Object" resultMap="BaseResultMap">
+    select * from user_info  where user_email = #{email,jdbcType=VARCHAR} and user_password = #{password,jdbcType=VARCHAR}
+  </select>
+  <select id="check" parameterType="Object" resultType="java.lang.Integer">
+    select count(*) from user_info  where user_email = #{email,jdbcType=VARCHAR} or user_name = #{name,jdbcType=VARCHAR}
+  </select>
 
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
