@@ -17,14 +17,14 @@ public class adminController {
     @Resource
     adminService admin;
     @Resource
-    userService user;
+    userService userService;
     @GetMapping(value = "/getUseList")
 //    public ResultVO getUserList()
     public ResultVO getUserList() {
 
         Map json = new HashMap();
         ResultVO resultVO = new ResultVO();
-        List<UserInfo> list = user.getUserList();
+        List<UserInfo> list = userService.getUserList();
         json.put("users", list);
         resultVO.setData(json);
         /**
