@@ -1,14 +1,21 @@
 package com.example.demo.dto;
 
+<<<<<<< HEAD
 
 import org.springframework.stereotype.Component;
 
+=======
+import lombok.Data;
+import org.springframework.stereotype.Component;
+@Data
+>>>>>>> origin/master
 public class OpenIdDTO {
     private String openid_ns;
     private String openid_mode;
     private String openid_return_to;
     private String openid_realm;
     private Integer openid_claimed_id;
+<<<<<<< HEAD
 
     public String getOpenid_ns() {
         return openid_ns;
@@ -58,5 +65,7 @@ public class OpenIdDTO {
         this.openid_identity = openid_identity;
     }
 
+=======
+>>>>>>> origin/master
     private String openid_identity;
 }
