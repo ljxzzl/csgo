@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	
+
  //Tabel Interlaced background color 2015-04-20 DeathGhost
  $('.Interlaced tr:odd').addClass('trbgcolor');
  //left menu toggle style
@@ -11,5 +11,5 @@ $(document).ready(function(){
 	 $(".menu-children li").css({background:'none'});
 	 $(this).css({background:'#f35844'});
 	});
- 
+
 });

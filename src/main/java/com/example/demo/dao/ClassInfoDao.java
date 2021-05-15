@@ -3,6 +3,8 @@ package com.example.demo.dao;
 import com.example.demo.pojo.ClassInfo;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface ClassInfoDao {
     int deleteByPrimaryKey(Integer classId);
@@ -16,4 +18,5 @@ public interface ClassInfoDao {
     int updateByPrimaryKeySelective(ClassInfo record);
 
     int updateByPrimaryKey(ClassInfo record);
+    List<ClassInfo> getReportList();
 }

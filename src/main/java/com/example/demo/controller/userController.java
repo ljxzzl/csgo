@@ -14,9 +14,13 @@ import javax.annotation.Resource;
 import javax.print.DocFlavor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
 import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.List;
@@ -46,7 +50,7 @@ public class userController {
 
     }
 
-    @PostMapping(value = "/login")//返回用户信息
+    @PostMapping(value = "/login")//返回用户信息 +显示封禁信息
 //    public ResultVO getUserList()
     public ResultVO login(@RequestParam(value = "email", required = true, defaultValue = "") String email,
                           @RequestParam(value = "password", required = true, defaultValue = "") String password, HttpServletRequest request) {
@@ -170,17 +174,18 @@ public class userController {
     }
 
 
-    @GetMapping(value = "/stock_ornament")//充值另说
+    @GetMapping(value = "/stock_ornament")//库存
     public ResultVO stock_ornament(HttpServletRequest request) throws MalformedURLException {
         HttpSession session = request.getSession();
         UserInfo user = (UserInfo) session.getAttribute("user");
         ResultVO resultVO = new ResultVO();
         if(user.getUserSteamId()!=null)
         {
-            String s=String.format("http://steamcommunity.com/profiles/{0}/inventory/json/{1}/{2}/", user.getUserSteamId(), 730, 2);
-            URL url = new URL(s);
-
-
+            String s=String.format("http://steamcommunity.com/profiles/%s/inventory/json/%s/%s/", user.getUserSteamId(), 730, 2);
+//            String pinpointUrl="https://steamcommunity.com/profiles/76561198431360208/inventory/json/730/2";
+            String json=getdata(s);
+            System.out.println("开始");
+            System.out.println(json);
         }
 
 
@@ -189,5 +194,24 @@ public class userController {
 
     }
 
+    private static String getdata(String url){
+        StringBuilder json = new StringBuilder();
+        try {
+            URL urlObject = new URL(url);
+            URLConnection uc = urlObject.openConnection();
+            // 设置为utf-8的编码 解决中文乱码
+            BufferedReader in = new BufferedReader(new InputStreamReader(uc.getInputStream(), "utf-8"));
+            String inputLine = null;
+            while ((inputLine = in.readLine()) != null) {
+                json.append(inputLine);
+            }
+            in.close();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return json.toString();
+    }
 
 }

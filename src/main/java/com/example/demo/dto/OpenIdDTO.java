@@ -2,11 +2,6 @@ package com.example.demo.dto;
 
 
 
-import org.springframework.stereotype.Component;
-
-
-
-
 public class OpenIdDTO {
     private String openid_ns;
     private String openid_mode;
@@ -62,7 +57,6 @@ public class OpenIdDTO {
     public void setOpenid_identity(String openid_identity) {
         this.openid_identity = openid_identity;
     }
-
 
     private String openid_identity;
 }

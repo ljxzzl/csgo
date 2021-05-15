@@ -23,7 +23,7 @@ public interface AdminInfoDao {
 
     int updateByPrimaryKey(AdminInfo record);//非空更新判断
 
-
+     AdminInfo login(String account, String password);
 
 
 }

@@ -2,6 +2,10 @@ package com.example.demo.service;
 
 import com.example.demo.pojo.ClassInfo;
 
+import java.util.List;
+
 public interface classService {
-    int addClass(ClassInfo classInfo);//添加喜欢物品信息
+    List<ClassInfo> getReportList();
+    int close(ClassInfo classInfo);
+
 }

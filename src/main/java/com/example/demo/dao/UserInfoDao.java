@@ -24,11 +24,10 @@ public interface UserInfoDao {
 
     UserInfo  login (String email ,String password);
     int  buyOnament(UserInfo user, OrnamentInfo ornament);
-//    int  steama_bind(String steam_id ,String apikey,String url);//绑定steam
-//    int  invest(int id ,String money);// 通过账户 id 更新充值
+
     int check(String name ,String email);//是否重复名字检测
     List<UserInfo> getUserList();
-
+    List<UserInfo>  search(String parm);
 
 
 }

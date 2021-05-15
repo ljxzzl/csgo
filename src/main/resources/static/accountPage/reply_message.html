@@ -12,17 +12,25 @@
   <div class="page-title">
     <span class="modular fl"><i class="user"></i><em>管理员回复</em></span>
   </div>
-  <dl>
-   <dt class="R-userTitle">DeathGhost:</dt>
-   <dd class="R-userCont">这里是用户留言信息哦....</dd>
-   <dt class="R-adminTitle">管理员</dt>
-   <dd class="R-adminCont">这里是管理员回复信息!这里是管理员回复信息!这里是管理员回复信息!这里是管理员回复信息!这里是管理员回复信息!这里是管理员回复信息!这里是管理员回复信息!这里是管理员回复信息!这里是管理员回复信息!这里是管理员回复信息!这里是管理员回复信息!这里是管理员回复信息!这里是管理员回复信息!这里是管理员回复信息!这里是管理员回复信息!这里是管理员回复信息!这里是管理员回复信息!这里是管理员回复信息!这里是管理员回复信息!</dd>
-  </dl>
+  <td>
+  <td style="width:15%;text-align:right;">反馈表id：</td>
+   <input id="id_3" type="text" class="textBox length-middle" value=""/></td>
+  <tr>
+   <td style="text-align:right;">是否处理：</td>
+   <td>
+    <select id="detail_3" class="textBox">
+     <option value="已处理">已处理</option>
+     <option value="暂缓处理">暂缓处理</option>
+     <option value="不予处理">不予处理</option>
+    </select>
+   </td>
   <hr/>
   <div>
-   <textarea class="textarea block" style="padding:1em;"></textarea>
-   <input type="submit" value="回复 " class="tdBtn" style="margin:8px 0;"/>
+   <textarea id="" class="textarea block" style="padding:1em;"></textarea>
+   <button class="tdBtn" id="submit_4">回复</button></td>
   </div>
  </div>
+ <script src="js/closeReport.js"></script>
+
 </body>
 </html>

@@ -15,6 +15,9 @@
     from class_info
     where class_id = #{classId,jdbcType=INTEGER}
   </select>
+  <select id="getReportList" parameterType="Object" resultMap="BaseResultMap">
+    select * from class_info
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from class_info
     where class_id = #{classId,jdbcType=INTEGER}

@@ -21,4 +21,11 @@ public interface userService {
     List<UserInfo> getUserList();
     int check(String name ,String email);//是否重复名称检测
     int  stock_ornament(UserInfo user);//检测库存steam
+
+    int close(UserInfo user);
+
+    List<UserInfo>  search(String parm);
+
+
+
 }

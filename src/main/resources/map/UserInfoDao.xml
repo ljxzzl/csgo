@@ -33,6 +33,9 @@
   <select id="check" parameterType="Object" resultType="java.lang.Integer">
     select count(*) from user_info  where user_email = #{email,jdbcType=VARCHAR} or user_name = #{name,jdbcType=VARCHAR}
   </select>
+  <select id="search" parameterType="Object" resultMap="BaseResultMap">
+    select * from user_info  where user_email like #{parm,jdbcType=VARCHAR} or user_id like #{parm,jdbcType=VARCHAR} or user_detail like #{parm,jdbcType=VARCHAR} or user_name like #{parm,jdbcType=VARCHAR}
+  </select>
 
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">

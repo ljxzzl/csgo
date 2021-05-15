@@ -36,10 +36,10 @@ public class ResultVO {
     @Override
     public String toString() {
         return "ResultVO{" +
-                "code=" + code +
-                ", msg='" + msg + '\'' +
-                ", data=" + data +
-                '}';
-    }
+            "code=" + code +
+            ", msg='" + msg + '\'' +
+            ", data=" + data +
+            '}';
+}
 //code 状态
 }

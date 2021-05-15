@@ -2,9 +2,7 @@ package com.example.demo;
 
 import com.alibaba.fastjson.JSONObject;
 import com.sun.deploy.net.HttpResponse;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.HttpEntity;
@@ -20,7 +18,9 @@ public class DemoApplication {
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
         System.out.print("http://localhost:8080/userPage/user_index.html\n");
+        System.out.print("http://localhost:8080/accountPage/index.html\n");
 
+        System.out.print("http://localhost:8080/accountPage/login.html\n");
         try {
             urltest();
         } catch (IOException e) {

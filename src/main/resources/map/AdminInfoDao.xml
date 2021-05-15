@@ -15,6 +15,9 @@
     from admin_info
     where admin_id = #{adminId,jdbcType=INTEGER}
   </select>
+  <select id="login" parameterType="Object" resultMap="BaseResultMap">
+    select * from admin_info  where admin_account = #{account,jdbcType=VARCHAR} and admin_password= #{password,jdbcType=VARCHAR}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from admin_info
     where admin_id = #{adminId,jdbcType=INTEGER}

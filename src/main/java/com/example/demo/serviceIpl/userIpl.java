@@ -31,12 +31,12 @@ public class userIpl implements userService {
 
     @Override
     public int steama_bind(UserInfo user) {
-        return userdao.updateByPrimaryKey(user);
+        return userdao.updateByPrimaryKeySelective(user);
     }
 
     @Override
     public int invest(UserInfo user) {
-        return userdao.updateByPrimaryKey(user);
+        return userdao.updateByPrimaryKeySelective(user);
     }
 
 
@@ -53,6 +53,16 @@ public class userIpl implements userService {
     @Override
     public int stock_ornament(UserInfo user) {
         return 0;
+    }
+
+    @Override
+    public int close(UserInfo user) {
+        return userdao.updateByPrimaryKeySelective(user);
+    }
+
+    @Override
+    public List<UserInfo> search(String parm) {
+        return userdao.search(parm);
     }
 
 }

@@ -1,5 +1,7 @@
 package com.example.demo.model;
+
 import org.springframework.stereotype.Component;
+
 
 @Component
 
@@ -8,6 +10,7 @@ public class User {
     private String bio;
     private String avatar_url;
     private String inventory;
+
 
     public Integer getId() {
         return id;
@@ -40,4 +43,5 @@ public class User {
     public void setInventory(String inventory) {
         this.inventory = inventory;
     }
+
 }
