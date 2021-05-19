@@ -33,7 +33,7 @@ public class userController {
     @Resource
     userService userService;
 
-    @PostMapping(value = "/check")
+    @PostMapping(value = "/check")//检查重复
 //    public ResultVO getUserList()
     public ResultVO check(@RequestParam(value = "email", required = true, defaultValue = "") String email,
                           @RequestParam(value = "name", required = true, defaultValue = "") String name) {
@@ -50,7 +50,7 @@ public class userController {
 
     }
 
-    @PostMapping(value = "/login")//返回用户信息 +显示封禁信息
+    @PostMapping(value = "/login")//登录+返回用户信息 +显示封禁信息
 //    public ResultVO getUserList()
     public ResultVO login(@RequestParam(value = "email", required = true, defaultValue = "") String email,
                           @RequestParam(value = "password", required = true, defaultValue = "") String password, HttpServletRequest request) {
@@ -80,7 +80,7 @@ public class userController {
 
     }
 
-    @PostMapping(value = "/register")//
+    @PostMapping(value = "/register")//注册
 //    public ResultVO getUserList()
     public ResultVO register(@RequestParam(value = "email", required = true, defaultValue = "") String email,
                              @RequestParam(value = "name", required = true, defaultValue = "") String name,
@@ -88,12 +88,11 @@ public class userController {
                              @RequestParam(value = "iphone", required = true, defaultValue = "") Integer iphone,
                              @RequestParam(value = "steam_apikey", required = true, defaultValue = "") String steam_apikey,
                              @RequestParam(value = "steam_id", required = true, defaultValue = "") String steam_id,
-                             @RequestParam(value = "steam_url", required = true, defaultValue = "") String steam_url,
-                             @RequestParam(value = "detail", required = true, defaultValue = "") String detail) {
+                             @RequestParam(value = "steam_url", required = true, defaultValue = "") String steam_url
+                          ) {
         UserInfo user = new UserInfo();
         user.setUserEmail(email);
         user.setUserName(name);
-        user.setUserDetail(detail);
         user.setUserIphone(iphone.toString());
         user.setUserPassword(password);
         user.setUserSteamId(steam_id);
@@ -112,7 +111,7 @@ public class userController {
 
     }
 
-    @PostMapping(value = "/invest")//充值另说
+    @PostMapping(value = "/invest")//充值账号
 //    public ResultVO getUserList()
     public ResultVO invest(@RequestParam(value = "id", required = true, defaultValue = "") String id,
                            @RequestParam(value = "account", required = true, defaultValue = "") String account, HttpServletRequest request) {
@@ -141,7 +140,7 @@ public class userController {
 
     }
 
-    @PostMapping(value = "/steam_bind")//充值另说
+    @PostMapping(value = "/steam_bind")//steam绑定
 //    public ResultVO getUserList()
     public ResultVO steam_bind(@RequestParam(value = "id", required = true, defaultValue = "") String id,
                                @RequestParam(value = "steam_apikey", required = true, defaultValue = "") String steam_apikey,
@@ -174,7 +173,7 @@ public class userController {
     }
 
 
-    @GetMapping(value = "/stock_ornament")//库存
+    @GetMapping(value = "/stock_ornament")//检测库存+到数据库
     public ResultVO stock_ornament(HttpServletRequest request) throws MalformedURLException {
         HttpSession session = request.getSession();
         UserInfo user = (UserInfo) session.getAttribute("user");
@@ -213,5 +212,9 @@ public class userController {
         }
         return json.toString();
     }
+
+
+
+
 
 }

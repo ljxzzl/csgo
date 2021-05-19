@@ -27,16 +27,12 @@ window.onload=( function () {
                         "      <i>￥</i>\n" +
                         "      <b>"+list[i].userAccount+"</b>\n" +
                         "     </span>\n" +
-                        "    </td>\n" +
-                        "    <td class=\"center\">\n" +
-                        "    </td>\n" +
                         "    <td class=\"center\">"+list[i].userDetail+"</td>\n" +
                         "    <td class=\"center\">"+list[i].userSteamId+"</td>\n" +
                         "    <td class=\"center\">"+list[i].userSteamKey+"</td>\n" +
                         "    <td class=\"center\">\n" +
                    "<a  href=\"edit_user.html?id=" +list[i].userId+"class=\"inline-block\" title=\"编辑\"><img src=\"images/icon_edit.gif\"/></a>"+
                         "     <a href=\"account.html\" class=\"inline-block\" title=\"资金管理\"><img src=\"images/icon_account.gif\"/></a>\n" +
-                        "     <a class=\"inline-block\" title=\"删除\"><img src=\"images/icon_drop.gif\"/></a>\n" +
                         "    </td>\n" +
                         "   </tr>\n"
                     )

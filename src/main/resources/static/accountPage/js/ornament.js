@@ -27,14 +27,10 @@ window.onload=( function () {
                         "      <i>￥</i>\n" +
                         "      <b>"+list[i].ornamentPrice+"</b>\n" +
                         "     </span>\n" +
-                        "    </td>\n" +
-                        "    <td class=\"center\">\n" +
-                        "    </td>\n" +
                         "    <td class=\"center\">"+list[i].ornamentDetail+"</td>\n" +
                         "    <td class=\"center\">\n" +
                         "     <a href=\"edit_product.html\" class=\"inline-block\" title=\"编辑\"><img src=\"images/icon_edit.gif\"/></a>\n" +
                         "     <a href=\"account.html\" class=\"inline-block\" title=\"资金管理\"><img src=\"images/icon_account.gif\"/></a>\n" +
-                        "     <a class=\"inline-block\" title=\"删除\"><img src=\"images/icon_drop.gif\"/></a>\n" +
                         "    </td>\n" +
                         "   </tr>\n"
                     )

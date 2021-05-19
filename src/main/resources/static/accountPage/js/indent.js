@@ -20,9 +20,7 @@ window.onload =( function () {
                         "    <td class=\"center\">"+list[i].indentUser1Id+"</td>\n" +
                         "    <td class=\"center\">"+list[i].indentUser2Id+"</td>\n" +
                         "    <td class=\"center\">"+list[i].indentDetail+"</td>\n" +
-                     "    <td class=\"center\">\n" +
-                        "     <a href=\"order_detail.html\" class=\"inline-block\" title=\"查看订单\"><img src=\"images/icon_view.gif\"/></a>\n" +
-                        "     <a class=\"inline-block\" title=\"删除订单\"><img src=\"images/icon_trash.gif\"/></a>"
+                     "    <td class=\"center\">\n"
                     )
                 }
             }
