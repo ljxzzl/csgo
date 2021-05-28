@@ -44,7 +44,7 @@ public class indexController {
 
 //        insertToMysql.insert(user);
 
-        return "product-center.html";
+        return "product-center";
 
     }
 }
