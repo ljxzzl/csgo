@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="FavoriteInfoDao">
+<mapper namespace="com.example.demo.dao.FavoriteInfoDao">
   <resultMap id="BaseResultMap" type="FavoriteInfo">
     <id column="favorite_id" jdbcType="INTEGER" property="favoriteId" />
     <result column="favorite_ornament_id" jdbcType="INTEGER" property="favoriteOrnamentId" />

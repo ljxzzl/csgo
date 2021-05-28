@@ -1,7 +1,10 @@
 package com.example.demo.dao;
 
 import com.example.demo.pojo.OrnamentInfo;
+import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+@Mapper
 public interface OrnamentInfoDao {
     int deleteByPrimaryKey(Integer ornamentId);
 
@@ -14,4 +17,6 @@ public interface OrnamentInfoDao {
     int updateByPrimaryKeySelective(OrnamentInfo record);
 
     int updateByPrimaryKey(OrnamentInfo record);
+    List<OrnamentInfo> OrnamentList();
+    List<OrnamentInfo> search(String parm);
 }
