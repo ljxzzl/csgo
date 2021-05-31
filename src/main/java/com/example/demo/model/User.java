@@ -12,5 +12,4 @@ public class User {
     private String SteamID;
     private String SteamUrl;
 
-
 }

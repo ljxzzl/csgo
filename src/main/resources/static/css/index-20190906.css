@@ -84,7 +84,6 @@
     line-height: 40px;
     box-sizing: border-box;
     padding: 0 40px 0 20px;
-    background: url("../img/index-20190906/more-icon.png") 190px center no-repeat;
     cursor: pointer;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -304,7 +303,6 @@
 .grp-slide-item1 .bd .ul .pro-box .box-list li a .single .img {
     width: 100%;
     height: 150px;
-    background: url("../img/index-20190906/gun-bg.jpg") center no-repeat;
     background-size: 100% 100%;
     text-align: center;
     position: relative
@@ -366,7 +364,6 @@
     height: 100%;
     overflow: hidden;
     position: absolute;
-    background: url("../img/index-20190906/pro-list-bk.png");
     text-align: center;
     font-size: 14px;
     color: #fff;
@@ -525,19 +522,15 @@
 }
 
 .grp-slide-item1.slide-new .hd {
-    background: url("../img/index-20190906/ttb120.png") no-repeat center
 }
 
 .grp-slide-item1.slide-buy .hd {
-    background: url("../img/index-20190906/ttb3.png") no-repeat center
 }
 
 .grp-slide-item1.slide-tho .hd {
-    background: url("../img/index-20190906/ttb4.png") no-repeat center
 }
 
 .grp-slide-item1.slide-shop .hd {
-    background: url("../img/index-20190906/ttb5.png") no-repeat center
 }
 
 .grp-slide-item1.slide-shop .bd {
@@ -572,7 +565,6 @@
     margin-top: 17px;
     padding: 4px;
     box-sizing: border-box;
-    background: url("../img/new/shop-bg.png") no-repeat;
     overflow: hidden
 }
 
@@ -608,7 +600,6 @@
     right: 0;
     top: 0;
     bottom: 0;
-    background: url("../img/new/photoFrame.png") no-repeat
 }
 
 .grp-slide-item1.slide-shop .bd .ul .prd li .name {
@@ -669,7 +660,6 @@
     width: 1px;
     height: 40px;
     margin-top: 26px;
-    background: url("../img/new/line.png") no-repeat
 }
 
 .zxsj {
@@ -702,7 +692,6 @@
 .zxsj .zjcj-list .zjcg-box {
     width: 100%;
     height: 100%;
-    background: url("../img/index-20190906/zjcj-bk_03.jpg") center no-repeat;
     background-size: 100% 100%;
     overflow: hidden;
     position: relative
@@ -765,7 +754,6 @@
     display: block;
     width: 111px;
     height: 95px;
-    background: url("../img/index-20190906/zjcj-list-bk.png") center no-repeat;
     background-size: 100% 100%;
     position: absolute;
     left: 0;
@@ -838,7 +826,6 @@
     width: 24px;
     height: 24px;
     display: block;
-    background: url("../img/index-20190906/zxcj-next.png") center no-repeat;
     margin-top: 35px;
     opacity: 0;
     transition: 0.4s
@@ -873,7 +860,6 @@
     position: relative;
     float: left;
     margin-left: 27px;
-    background: url("../img/index-20190906/rmdp-bk_03.jpg") center no-repeat;
     background-size: 100% 100%;
     transition: all 0.4s
 }
@@ -934,7 +920,6 @@
     right: 0;
     width: 11px;
     height: 5px;
-    background: url("../img/index-20190906/rmdp-info.png") center;
     top: 18px;
     transition: 0.3s
 }
@@ -942,7 +927,6 @@
 .rmdp-box .rmdp-list a.list-box .info .info-detail {
     width: 260px;
     min-height: 230px;
-    background: url("../img/index-20190906/dp-rank-bk.png") center no-repeat;
     background-size: 100% 100%;
     position: absolute;
     top: 28px;
@@ -1258,7 +1242,6 @@
 }
 
 .nav-new-list > li:hover {
-    background: url("../img/index-20190906/nav-bk.png") center no-repeat;
     background-size: 100% 100%;
     border-bottom: 1px solid #0b84d3
 }

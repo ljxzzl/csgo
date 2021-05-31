@@ -83,7 +83,6 @@
     line-height: 40px;
     box-sizing: border-box;
     padding: 0 40px 0 20px;
-    background: url("../img/new/more-icon.png") 190px center no-repeat;
     cursor: pointer;
     text-overflow: ellipsis;
     white-space: nowrap;
