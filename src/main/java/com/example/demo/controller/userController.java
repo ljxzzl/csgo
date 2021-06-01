@@ -238,7 +238,6 @@ public class userController {
                 String image="http://steamcommunity-a.akamaihd.net/economy/image/"+icon_url;
                 ornamentInfo.setOrnamentImage(image);
                 ornamentInfo.setOrnamentCount(userid.toString());
-                ornamentInfo.setOrnamentCount(userid.toString());
                 ornamentInfo.setOrnamentStatus("用户库存中");
                 ornamentService.addOrnament(ornamentInfo);
             }

@@ -16,20 +16,20 @@ public class ornamentIpl implements ornamentService {
     @Autowired
     UserInfoDao user;
     @Autowired
-    OrnamentInfoDao ornament;
+    OrnamentInfoDao ornamentInfoDao;
     @Override
     public int addOrnament(OrnamentInfo ornament) {
-        return 0;
+        return ornamentInfoDao.insert(ornament);
     }
 
     @Override
     public List<OrnamentInfo> ornamentList() {
-        return ornament.OrnamentList();
+        return ornamentInfoDao.OrnamentList();
     }
 
     @Override
     public List<OrnamentInfo> qureyOrnamentList(String name) {
-        return ornament.search(name);
+        return ornamentInfoDao.search(name);
     }
 
 
@@ -40,21 +40,21 @@ public class ornamentIpl implements ornamentService {
 
     @Override
     public int close(OrnamentInfo ornamentInfo) {
-        return ornament.updateByPrimaryKeySelective(ornamentInfo);
+        return ornamentInfoDao.updateByPrimaryKeySelective(ornamentInfo);
     }
 
     @Override
     public int updateByUserId(String id, String parm, String ornament_price) {
-        return ornament.updateByUserId(id, parm, ornament_price);
+        return ornamentInfoDao.updateByUserId(id, parm, ornament_price);
     }
 
     @Override
     public OrnamentInfo selectByPrimaryKey(Integer ornamentId) {
-        return ornament.selectByPrimaryKey(ornamentId);
+        return ornamentInfoDao.selectByPrimaryKey(ornamentId);
     }
 
     @Override
     public List<OrnamentInfo> searchUser(String userid) {
-        return ornament.searchUser(userid);
+        return ornamentInfoDao.searchUser(userid);
     }
 }
