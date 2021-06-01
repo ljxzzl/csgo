@@ -480,7 +480,7 @@
 		})
 
 
-        $("#reportbutton").click(function () {
+        $("#userUpdate").click(function () {
 
             $.ajax({
                     type: "post",
@@ -488,7 +488,7 @@
                     data: {
                         ornaamentid: id,
                         status: $('#detail option:selected').val(),
-                        parm: $('#price').val()
+                        price: $('#price').val()
 
                     },
                     dataType: "json",
