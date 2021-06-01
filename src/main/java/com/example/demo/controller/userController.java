@@ -78,7 +78,6 @@ public class userController {
         } else
 
             resultVO.setMsg("未注册");
-        System.out.print(user);
         return resultVO;
     }
 
@@ -206,7 +205,9 @@ public class userController {
     public ResultVO stock_ornament(@RequestParam(value = "userid", required = true, defaultValue = "") Integer userid
                                    ) throws MalformedURLException {
         UserInfo user = (UserInfo) userService.selectByPrimaryKey(userid);
+        System.out.print("检视库存啊"+user.getUserSteamId());
         ResultVO resultVO = new ResultVO();
+
         if(user.getUserSteamId()!=null)
         {
             String str=String.format("http://steamcommunity.com/profiles/%s/inventory/json/%s/%s/", user.getUserSteamId(), 730, 2);
