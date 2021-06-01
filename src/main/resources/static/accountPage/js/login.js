@@ -2,7 +2,7 @@
 var oDiv=document.getElementById("logintest");
 var admin;
 oDiv.onclick=function(){
-    alert("kaishi");
+    alert("开始");
     $.ajax({
         type: "post",
         url: "/admin_login",
@@ -17,7 +17,6 @@ oDiv.onclick=function(){
             if(res.code==200)
             {
                  admin=res.data.admin.adminAccount;
-                alert("管理员"+res.data.admin.adminAccount);
                 window.location.href = "http://localhost:8080/accountPage/index.html";
                 window.onload=( function (){document.getElementById('root_1').innerText="span的文本";});
             }

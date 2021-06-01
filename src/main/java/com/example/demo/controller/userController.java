@@ -36,7 +36,7 @@ import java.util.*;
 public class userController {
 
     @Resource
-    adminService admin;
+    adminService admin1;
     @Resource
     userService userService;
     @Resource

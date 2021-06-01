@@ -1,15 +1,18 @@
 package com.example.demo.controller;
 
 import com.example.demo.VO.ResultVO;
+import com.example.demo.mapper.AdminMapper;
+import com.example.demo.model.Admin;
 import com.example.demo.pojo.*;
 import com.example.demo.service.*;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
@@ -28,6 +31,7 @@ public class adminController {
 
     @Resource
     classService reportService;
+
     @GetMapping(value = "/getUserList")
 //    public ResultVO getUserList()
     public ResultVO getUserList() {
