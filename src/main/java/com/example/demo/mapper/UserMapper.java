@@ -1,4 +1,4 @@
-package com.example.demo.mapper;
+package com.example.demo.Mapper;
 
 import com.example.demo.model.User;
 import org.apache.ibatis.annotations.Insert;
@@ -12,4 +12,8 @@ public interface UserMapper {
     void insert(User user);
     @Select("select * from user_info where SteamID = #{SteamID}")
     User findById(@Param("SteamId") String SteamID);
+    @Select("select * from user_info where password = #{password}")
+    User findByPwd(@Param("password") String password);
+    @Select("select * from user_info where username = #{userName}")
+    User findByUserName(@Param("userName") String userName);
 }
