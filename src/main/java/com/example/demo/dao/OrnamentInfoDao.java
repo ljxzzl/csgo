@@ -19,4 +19,10 @@ public interface OrnamentInfoDao {
     int updateByPrimaryKey(OrnamentInfo record);
     List<OrnamentInfo> OrnamentList();
     List<OrnamentInfo> search(String parm);
+    int  updateByUserId(String userid,String status,String price);
+    List<OrnamentInfo> searchUser  (String userid);
+
+
+
+
 }

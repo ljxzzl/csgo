@@ -28,6 +28,9 @@
   <select id="OrnamentList" parameterType="Object" resultMap="BaseResultMap">
     select * from ornament_info
   </select>
+  <select id="searchUser" parameterType="Object" resultMap="BaseResultMap">
+    select * from ornament_info where ornament_count=#{userid,jdbcType=VARCHAR}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from ornament_info
     where ornament_id = #{ornamentId,jdbcType=INTEGER}
@@ -124,7 +127,15 @@
       ornament_image = #{ornamentImage,jdbcType=VARCHAR},
       ornament_status = #{ornamentStatus,jdbcType=VARCHAR},
       ornament_count = #{ornamentCount,jdbcType=VARCHAR},
-      ornament_detail = #{ornamentDetail,jdbcType=VARCHAR}
+      ornament_detail = #{ornamentDetail,jdbcType=VARCHAR},
     where ornament_id = #{ornamentId,jdbcType=INTEGER}
+  </update>
+
+  <update id="updateByUserId" parameterType="com.example.demo.pojo.OrnamentInfo">
+    update ornament_info
+    set
+      ornament_price = #{price,jdbcType=VARCHAR},
+      ornament_status = #{status,jdbcType=VARCHAR},
+    where ornament_count = #{userid,jdbcType=VARCHAR}
   </update>
 </mapper>

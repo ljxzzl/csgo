@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.pojo.IndentInfo;
 import com.example.demo.pojo.OrnamentInfo;
 import com.example.demo.pojo.UserInfo;
 
@@ -25,7 +26,7 @@ public interface userService {
     int close(UserInfo user);
 
     List<UserInfo>  search(String parm);
-
+    UserInfo selectByPrimaryKey(Integer userId);
 
 
 }

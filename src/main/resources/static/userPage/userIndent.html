@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>服务支持</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        body{
+            /*background-color: #000000;*/
+            font-family: "microsoft yahei";
+            /*min-width: 800px;*/
+        }
+        img{
+            width: 100%;
+            /*height: 462px;*/
+        }
+        .navbar{
+            /*margin-bottom: -10px;*/
+        }
+        #myppt{
+            margin-top: -20px;
+
+        }
+    </style>
+</head>
+<body>
+<!----------------头部----------------->
+<header id="header">
+    <ul class="nav navbar-nav navbar-right">
+        <li><a data-toggle="modal" data-target="#register" href=""><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+        <li><a data-toggle="modal" data-target="#login" href=""><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+    </ul>
+    <div class="header container">
+        <div class="h-top">
+            <a href="###">CN</a>
+            <span>/</span>
+            <a href="###">EN</a>
+        </div>
+        <div class="logo">
+            <a href="user_index.html"><img src="images/logo.png" class="img-responsive" alt="" title="VCARE"></a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="user_index.html" class="active">首页</a>
+                </li>
+                <li>
+                    <a href="about-us.html">关于csgo</a>
+                </li>
+                <li>
+                    <a href="ornament-center.html">枪械饰品中心</a>
+                </li>
+                <li>
+                    <a href="news-information.html">csgo赛事中心</a>
+                </li>
+                <li>
+                    <a href="user_info.html">用户信息</a>
+                </li>
+                <li>
+                    <a href="contact-us.html">联系我们</a>
+                </li>
+            </ul>
+            <div class="select-ip visible-lg">
+                <input type="text" placeholder="搜索" />
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+</header>
+<!----------------头部结束----------------->
+
+<!-----------轮播开始---------->
+<div id="myCarousel" class="carousel slide">
+    <!-- 轮播（Carousel）项目 -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="images/support.jpg" alt="First slide">
+        </div>
+    </div>
+</div>
+<!-----------轮播结束---------->
+<!-----------内容开始---------->
+<div class="section">
+    <div class="container conter-ming">
+        <div class="col-xs-12 col-sm-4 col-md-3 left-infor">
+            <div class="column">
+                <div class="column-tit">
+                    <span>个人服务</span>
+                    <span>NEMS</span>
+                </div>
+                <ul>
+                    <li><a id="indet" href="userIndent.html">订单历史</a></li>
+                    <li><a id="report"href="userReport.html">举报反馈</a></li>
+                    <li><a id="steambind"href="user_steambind.html">steam绑定</a></li>
+                    <li><a id="favorite" href="userFavorite.html" >个人收藏夹</a></li>
+                    <li><a id="invest" href="user_invest.html">钱包充值</a></li>
+                </ul>
+            </div>
+            <div class="con-img hidden-xs">
+                <img src="images/img_001.jpg" />
+            </div>
+            <div class="contact-infor hidden-xs">
+                <div class="column-tit">
+                    <span>联系我们</span>
+                    <span>CONTACT US</span>
+                </div>
+                <div class="contact-min">
+                    <span>联系人：梁家轩</span>
+                    <span>手机：18595747294</span>
+                    <span>地址：郑州市中原区</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-9 right-infor">
+            <div class="infor-conter">
+                <div class="crumbs">
+                    <a href="user_index.html">首页</a>>
+                    <a href="#">个人信息模块</a>
+                </div>
+                <div class="problem-conten">
+                    <ul>
+                        <li>
+                            <div class="pro-list">
+                                <span class="tit">用户个人信息</span>
+                                <span class="btn add"></span>
+                            </div>
+                            <div id="userIndent" class="tpp">
+
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-----------内容结束---------->
+<!-----------页尾开始---------->
+<footer>
+    <div class="container">
+        <div class="foot_Keep_record">版权所有 © 2020-2020  XXX  XXX</div>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+<script type="text/javascript" src="js/bootstrap.min.js" ></script>
+<script>
+    $(".problem-conten li .btn").click(function(){
+        $(this).parents("li").find(".tpp").slideToggle();
+        $(this).toggleClass('add').toggleClass('jian');
+    });
+
+</script>
+</body>
+<script>
+    // var u = JSON.parse(sessionStorage.getItem("user"))//读取数据语法：====获取数据并将数据装换成json格式
+    // console.log(u.data.user.userName)//打印到控制台
+    // document.getElementById("userMessage").innerText("<p>1、X9s与X9的区别</p>\n" +
+    //     "\t\t      \t  \t \t\t\t<dd>新品X9s在上一代X9的基础上，进行了更多的内在优化</dd>\n" +
+    //     "\t\t\t\t\t\t\t\t<dd>新品X9s在上一代X9的基础上，进行了更多的内在优化</dd>\n" +
+    //     "\t\t\t\t\t\t\t\t<dd>新品X9s在上一代X9的基础上，进行了更多的内在优化</dd>\n" +
+    //     "\t\t\t\t\t\t\t\t<dd>新品X9s在上一代X9的基础上，进行了更多的内在优化</dd>\n" +
+    //     "\t\t\t\t\t\t\t\t<p>1、X9s与X9的区别</p>\n" +
+    //     "\t\t\t\t\t\t\t\t<dd>新品X9s在上一代X9的基础上，进行了更多的内在优化</dd>\n" +
+    //     "\t\t\t\t\t\t\t\t<dd>新品X9s在上一代X9的基础上，进行了更多的内在优化</dd>\n" +
+    //     "\t\t      \t  \t \t\t\t<dd>新品X9s在上一代X9的基础上，进行了更多的内在优化</dd>\n" +
+    //     "\t\t      \t  \t \t\t\t<dd>新品X9s在上一代X9的基础上，进行了更多的内在优化</dd>");
+</script>
+<script>
+    var infostr = sessionStorage.Message;
+    var obj = JSON.parse(infostr);
+    console.log(obj.type);
+    var list=obj.list4;
+    var list1=obj.list5;
+    window.onload=( function () {
+        alert("收藏夹");
+        for (var i = 0; i < list.length; i++){
+            $('#userIndent').append("<table class=\"layui-table\">\n" +
+                "  <colgroup>\n" +
+                "    <col width=\"150\">\n" +
+                "    <col width=\"200\">\n" +
+                "    <col>\n" +
+                "  </colgroup>\n" +
+                "  <thead>\n" +
+                "    <tr>\n" +
+                "  <th>饰品id</th>\n" +
+                "  <th>饰品名称</th>\n" +
+                "   <th>对接用户</th>\n" +
+                "   <th>价格</th>\n" +
+                "    </tr> \n" +
+                "  </thead>\n" +
+                "  <tbody>\n" +
+                "    <tr>\n" +
+                "      <td>"+list1[i].ornamentId+"</td>\n" +
+                "      <td>"+list1[i].ornamentName+"</td>\n" +
+                "      <td>"+list[i].userName+"</td>\n" +
+                "      <td>"+list1[i].ornamentPrice+"</td>\n" +
+                "    </tr>\n" +
+                "  </tbody>\n" +
+                "</table>");
+        }})
+
+</script>
+</html>

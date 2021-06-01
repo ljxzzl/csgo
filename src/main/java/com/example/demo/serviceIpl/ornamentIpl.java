@@ -42,4 +42,19 @@ public class ornamentIpl implements ornamentService {
     public int close(OrnamentInfo ornamentInfo) {
         return ornament.updateByPrimaryKeySelective(ornamentInfo);
     }
+
+    @Override
+    public int updateByUserId(String id, String parm, String ornament_price) {
+        return ornament.updateByUserId(id, parm, ornament_price);
+    }
+
+    @Override
+    public OrnamentInfo selectByPrimaryKey(Integer ornamentId) {
+        return ornament.selectByPrimaryKey(ornamentId);
+    }
+
+    @Override
+    public List<OrnamentInfo> searchUser(String userid) {
+        return ornament.searchUser(userid);
+    }
 }

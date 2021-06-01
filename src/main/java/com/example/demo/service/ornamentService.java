@@ -14,4 +14,8 @@ public interface ornamentService {
     List<OrnamentInfo> PriceOrnemntList(String name);//价格排序
 
     int close(OrnamentInfo ornamentInfo);
+    int  updateByUserId(String id,String parm,String ornament_price);
+    OrnamentInfo selectByPrimaryKey(Integer ornamentId);
+    List<OrnamentInfo> searchUser  (String userid);
+
 }

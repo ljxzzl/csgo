@@ -5,15 +5,19 @@
     <id column="class_id" jdbcType="INTEGER" property="classId" />
     <result column="class_name" jdbcType="VARCHAR" property="className" />
     <result column="class_detial" jdbcType="VARCHAR" property="classDetial" />
+    <result column="class_userid" jdbcType="INTEGER" property="classUserId" />
   </resultMap>
   <sql id="Base_Column_List">
-    class_id, class_name, class_detial
+    class_id, class_name, class_detial,class_userid
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from class_info
     where class_id = #{classId,jdbcType=INTEGER}
+  </select>
+  <select id="search" parameterType="Object" resultMap="BaseResultMap">
+    select * from class_info where class_userid =#{parm,jdbcType=VARCHAR}
   </select>
   <select id="getReportList" parameterType="Object" resultMap="BaseResultMap">
     select * from class_info
@@ -24,7 +28,7 @@
   </delete>
   <insert id="insert" keyColumn="class_id" keyProperty="classId" parameterType="ClassInfo" useGeneratedKeys="true">
     insert into class_info (class_name, class_detial)
-    values (#{className,jdbcType=VARCHAR}, #{classDetial,jdbcType=VARCHAR})
+    values (#{className,jdbcType=VARCHAR}, #{classDetial,jdbcType=VARCHAR},#{classUserId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" keyColumn="class_id" keyProperty="classId" parameterType="ClassInfo" useGeneratedKeys="true">
     insert into class_info
@@ -43,6 +47,9 @@
       <if test="classDetial != null">
         #{classDetial,jdbcType=VARCHAR},
       </if>
+      <if test="classUserId != null">
+        #{classUserId,jdbcType=INTEGER},
+      </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="ClassInfo">
@@ -60,7 +67,8 @@
   <update id="updateByPrimaryKey" parameterType="ClassInfo">
     update class_info
     set class_name = #{className,jdbcType=VARCHAR},
-      class_detial = #{classDetial,jdbcType=VARCHAR}
+      class_detial = #{classDetial,jdbcType=VARCHAR},
+     class_userid={classUserId,jdbcType=INTEGER}
     where class_id = #{classId,jdbcType=INTEGER}
   </update>
 </mapper>

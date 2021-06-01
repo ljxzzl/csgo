@@ -65,5 +65,10 @@ public class userIpl implements userService {
         return userdao.search(parm);
     }
 
+    @Override
+    public UserInfo selectByPrimaryKey(Integer userId) {
+        return userdao.selectByPrimaryKey(userId);
+    }
+
 }
 

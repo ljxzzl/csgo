@@ -1,6 +1,7 @@
 package com.example.demo.dao;
 
 import com.example.demo.pojo.ClassInfo;
+import com.example.demo.pojo.FavoriteInfo;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -19,4 +20,5 @@ public interface ClassInfoDao {
 
     int updateByPrimaryKey(ClassInfo record);
     List<ClassInfo> getReportList();
+    List<ClassInfo> search(int s);
 }

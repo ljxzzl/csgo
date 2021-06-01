@@ -1,28 +1,28 @@
 var oDiv=document.getElementById("ornament");
 
-window.onload=( function () {
-    //DrawTable(null);
-   console.log("device");
-    $.ajax({
-            type: "get",
-            url: "/getOrnamentList", //res.data.users[i].userId
-            dataType: "json",
-            success: function (res) {
-                console.log(res);
-                var list = res.data.ornaments;
-                console.log("test" + list);
-                for (var i = 0; i < list.length; i++) {
-                    $('#allOrnament').append("<tr>\n" +
-                        "    <td>\n" +
-                        "     <input type=\"checkbox\"/>\n" +
-                        "     <span class=\"middle\">"+list[i].ornamentId+"</span>\n" +
-                        "    </td>\n" +
-                        "    <td class=\"center\">"+list[i].ornamentName+"</td>\n" +
-                        "    <td class=\"center\">"+list[i].ornamentClass+"</td>\n" +
-                        "    <td class=\"center\">"+list[i].ornamentImage+"</td>\n" +
-                        "    <td class=\"center\">"+list[i].ornamentStatus+"</td>\n" +
-                        "    <td class=\"center\">"+list[i].ornamentCount+"</td>\n" +
-                        "    <td class=\"center\">\n" +
+                    window.onload=( function () {
+                        //DrawTable(null);
+                        console.log("device");
+                        $.ajax({
+                            type: "get",
+                            url: "/getOrnamentList", //res.data.users[i].userId
+                            dataType: "json",
+                            success: function (res) {
+                                console.log(res);
+                                var list = res.data.ornaments;
+                                console.log("test" + list);
+                                for (var i = 0; i < list.length; i++) {
+                                    $('#allOrnament').append("<tr>\n" +
+                                        "    <td>\n" +
+                                        "     <input type=\"checkbox\"/>\n" +
+                                        "     <span class=\"middle\">"+list[i].ornamentId+"</span>\n" +
+                                        "    </td>\n" +
+                                        "    <td class=\"center\">"+list[i].ornamentName+"</td>\n" +
+                                        "    <td class=\"center\">"+list[i].ornamentClass+"</td>\n" +
+                                        "    <td class=\"center\">"+list[i].ornamentImage+"</td>\n" +
+                                        "    <td class=\"center\">"+list[i].ornamentStatus+"</td>\n" +
+                                        "    <td class=\"center\">"+list[i].ornamentCount+"</td>\n" +
+                                        "    <td class=\"center\">\n" +
                         "     <span>\n" +
                         "      <i>￥</i>\n" +
                         "      <b>"+list[i].ornamentPrice+"</b>\n" +

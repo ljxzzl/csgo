@@ -74,11 +74,11 @@ public class indexController {
 //                        return "index";
 //                }
                 User user = new User();
-                user.setUsername(userName);
-                user.setPassword(password);
-                user.setSteamID(SteamID);
-                user.setSteamUrl(SteamUrl);
-                userMapper.insert(user);
+//                user.setUsername(userName);
+//                user.setPassword(password);
+//                user.setSteamID(SteamID);
+//                user.setSteamUrl(SteamUrl);
+//                userMapper.insert(user);
                 return "index";
         }
 }

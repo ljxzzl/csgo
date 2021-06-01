@@ -19,6 +19,7 @@ oDiv.onclick=function(){
                  admin=res.data.admin.adminAccount;
                 alert("管理员"+res.data.admin.adminAccount);
                 window.location.href = "http://localhost:8080/accountPage/index.html";
+                window.onload=( function (){document.getElementById('root_1').innerText="span的文本";});
             }
 
              if ((res.status==500))
@@ -32,4 +33,3 @@ oDiv.onclick=function(){
     });
 };
 
-window.onload=( function (){document.getElementById('root_1').innerText="span的文本";});

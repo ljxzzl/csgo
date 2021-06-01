@@ -42,16 +42,8 @@ public class OrderController {
         model.setProductCode("FAST_INSTANT_TRADE_PAY");
         //设置request参数
         request.setBizModel(model);
-        /*alipayRequest.setBizContent("{\"out_trade_no\":\"" + out_trade_no + "\","
-                + "\"total_amount\":\"" + total_amount + "\","
-                + "\"subject\":\"" + subject + "\","
-                + "\"body\":\"" + body + "\","
-                + "\"product_code\":\"FAST_INSTANT_TRADE_PAY\"}");*/
-
-        //生成表单
         AlipayTradePagePayResponse alipayTradePagePayResponse = alipayClient.pageExecute(request);
         String result = alipayTradePagePayResponse.getBody();
-
         return result;
     }
 

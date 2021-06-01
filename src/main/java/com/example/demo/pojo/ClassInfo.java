@@ -15,6 +15,7 @@ public class ClassInfo implements Serializable {
      * 注释
      */
     private String classDetial;
+    private Integer classUserId;
 
     private static final long serialVersionUID = 1L;
 
@@ -81,5 +82,13 @@ public class ClassInfo implements Serializable {
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();
+    }
+
+    public Integer getClassUserId() {
+        return classUserId;
+    }
+
+    public void setClassUserId(Integer classUserId) {
+        this.classUserId = classUserId;
     }
 }

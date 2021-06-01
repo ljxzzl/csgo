@@ -51,22 +51,22 @@
                         <form class="form-group" action="">
                             <div class="form-group">
                                 <label for="">用户名</label>
-                                <input class="form-control" type="text" placeholder="6-15位字母或数字">
+                                <input  id="name" class="form-control" type="text" placeholder="6-15位字母或数字">
                             </div>
                             <div class="form-group">
                                 <label for="">密码</label>
-                                <input class="form-control" type="password" placeholder="至少6位字母或数字">
+                                <input id="password"class="form-control" type="password" placeholder="至少6位字母或数字">
                             </div>
                             <div class="form-group">
-                                <label for="">再次输入密码</label>
-                                <input class="form-control" type="password" placeholder="至少6位字母或数字">
+                                <label for="">电话</label>
+                                <input id="iphone"class="form-control" type="password" placeholder="至少6位字母或数字">
                             </div>
                             <div class="form-group">
                                 <label for="">邮箱</label>
-                                <input class="form-control" type="email" placeholder="例如:123@123.com">
+                                <input id="email"class="form-control" type="email" placeholder="例如:123@123.com">
                             </div>
                             <div class="text-right">
-                                <button class="btn btn-primary" type="submit">提交</button>
+                                <button id="userregist" class="btn btn-primary" type="submit">提交</button>
                                 <button class="btn btn-danger" data-dismiss="modal">取消</button>
                             </div>
                             <a href="" data-toggle="modal" data-dismiss="modal" data-target="#login">已有账号？点我登录</a>
@@ -91,14 +91,14 @@
                         <form class="form-group" action="">
                             <div class="form-group">
                                 <label for="">邮箱</label>
-                                <input class="form-control" type="text" placeholder="">
+                                <input id="useremail"class="form-control" type="text" placeholder="">
                             </div>
                             <div class="form-group">
                                 <label for="">密码</label>
-                                <input class="form-control" type="password" placeholder="">
+                                <input id="userpassword" class="form-control" type="password" placeholder="">
                             </div>
                             <div class="text-right">
-                                <button class="btn btn-primary" type="submit">登录</button>
+                                <button id="userlogin" class="btn btn-primary" type="submit">登录</button>
                                 <button class="btn btn-danger" data-dismiss="modal">取消</button>
                             </div>
                             <a href="" data-toggle="modal" data-dismiss="modal" data-target="#register">还没有账号？点我注册</a>
@@ -107,6 +107,7 @@
                 </div>
             </div>
         </div>
+
    <header id="header">
 
 	<div class="header container">
@@ -116,7 +117,7 @@
             <!--<a href="register.html">注册</a>-->
        <!--</div>-->
 		<div class="logo">
-			<a href="user_index.html"><img src="images/logo.png" class="img-responsive" alt="" title="VCARE"></a>
+			<a href="user_index.html"><img src="imag/logo.png" class="img-responsive" alt="" title="VCARE"></a>
 		</div>
 		<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
@@ -127,7 +128,7 @@
 						<a href="about-us.html">关于csgo</a>
 					</li>
 					<li>
-						<a href="/product-center">枪械饰品中心</a>
+						<a href="sellList.html">枪械饰品中心</a>
 					</li>
 					<li>
 						<a href="news-information.html">csgo赛事中心</a>
@@ -137,58 +138,19 @@
 					</li>
 					<li>
 						<a href="contact-us.html">联系我们</a>
-					</li>				
-				</ul>
+					</li>
+                    <li>
+                        <a href="sellList.html">在售饰品</a>
+                    </li>
+                </ul>
 			<div class="select-ip visible-lg">
         	 <input type="text" placeholder="搜索" />
         	 <span></span>
         	</div>
 		</div>
 	</div>
-	<nav class="navbar navbar-inverse visible-xs" role="banner">
-		<div class="container">
-			<div class="navbar-header">
-			<div class="navbar-toggle" id="bar_logoin">
-				<span class="h-top" id="top_login_no">
-                 <a href="###">CN</a>
-           		 <span>/</span>
-            	 <a href="###">EN</a>
-                </span>
-				</div>
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="user_index.html">
-					<img src="images/logo.png" class="img-responsive" alt="">
-				</a>
-			</div>
-			<div class="collapse navbar-collapse">
-				<ul class="nav navbar-nav">
-					<li>
-						<a href="user_index.html" class="active">首页</a>
-					</li>
-					<li>
-						<a href="about-us.html">关于csgo</a>
-					</li>
-					<li>
-						<a href="../product-center.html">枪械饰品中心</a>
-					</li>
-					<li>
-						<a href="news-information.html">csgo新闻中心</a>
-					</li>
-					<li>
-						<a href="user_info.html">服务支持</a>
-					</li>
-					<li>
-						<a href="contact-us.html">联系我们</a>
-					</li>		
-				</ul>
-		</div>
-		</div><!--/.container-->
-	</nav><!--/nav-->
+
+
    </header>
 		<!----------------头部结束----------------->
 		
@@ -619,4 +581,7 @@
 </div>
 
 </body>
+    <script src="js/login.js"></script>
+    <script src="js/register.js"></script>
+
 </html>

@@ -56,7 +56,7 @@
 					<a href="about-us.html">关于csgo</a>
 				</li>
 				<li>
-					<a href="../product-center.html">枪械饰品中心</a>
+					<a href="ornament-center.html">枪械饰品中心</a>
 				</li>
 				<li>
 					<a href="news-information.html">csgo赛事中心</a>
@@ -103,7 +103,7 @@
 						<a href="about-us.html">关于VCARE</a>
 					</li>
 					<li>
-						<a href="../product-center.html">产品中心</a>
+						<a href="ornament-center.html">产品中心</a>
 					</li>
 					<li>
 						<a href="news-information.html">新闻中心</a>
@@ -152,11 +152,9 @@
       	  	 		<span>CONTACT US</span>
       	  	 	</div>
       	  	 	<div class="contact-min">
-      	  	 		<span>联系人：肉多多</span>
-	      	  	 	<span>手机：XXX</span>
-	      	  	 	<span>电话：XXX</span>
-	      	  	 	<span>邮箱：XXX</span>
-	      	  	 	<span>地址：XXX</span>
+					<span>联系人：梁家轩</span>
+					<span>手机：18595747294</span>
+					<span>地址：郑州市中原区</span>
       	  	 	</div>
       	  	 </div>
       	  </div>
@@ -170,13 +168,11 @@
       	  	    	<div class="form">
       	  	    		<form>
       	  	    			<input type="text" placeholder="姓名" />
-      	  	    			<input type="text" placeholder="公司" />
       	  	    			<input type="text" placeholder="电话" />
-      	  	    			<input type="text" placeholder="邮箱" />
-      	  	    			<textarea rows="3" placeholder="需求"></textarea>
+      	  	    			<textarea id="report" rows="3" placeholder="反馈"></textarea>
       	  	    			<div class="btn">
       	  	    				<button class="reset" type="reset" value="重置">重置</button>
-      	  	    				<button class="submit" type="submit" value="提交">提交</button>
+      	  	    				<button   id="reportbutton" class="submit" type="button" value="提交">提交</button>
       	  	    			</div>
       	  	    		</form>
       	  	    	</div>
@@ -186,26 +182,22 @@
       	  	    		</div>
       	  	    		<div class="col-xs-12 col-sm-6 col-md-5 span6">
       	  	    			<div class="span7">
-      	  	    				<span>XXX</span>
-      	  	    				<span>Vcare International</span>
+      	  	    				<span>csgo</span>
+      	  	    				<span> 饰品交易</span>
       	  	    			</div>
-      	  	    			<span>地址：广东省深圳市宝安区西乡街道宝源路名    优采购中心B座三区512室 </span>
-      	  	    			<span>电话：0755-23222661</span>
+      	  	    			<span>地址：郑州市中原区 </span>
       	  	    			<span>手机：13922892853</span>
-      	  	    			<span>E-mail：13922892853@163.com</span>
-      	  	    			<span>www.soowww.com</span>
+      	  	    			<span>E-mail：18595747294@163.com</span>
       	  	    		</div>
       	  	    		<div class="col-xs-12 col-sm-6 col-md-5 span8">
       	  	    			<div class="span9">
       	  	    				<div class="pull-left"><img src="images/icon_phone.png"></div>
       	  	    				<div class="pull-left">
-      	  	    					<span>全国服务热线</span>
-      	  	    					<span>13922892853</span>
+
       	  	    				</div>
       	  	    			</div>
       	  	    			<div class="span10">
-      	  	    				<span>售前服务：0755-23222661</span>
-      	  	    				<span>售后服务：0755-23222661</span>
+
       	  	    			</div>
       	  	    		</div>
       	  	    	</div>
@@ -235,4 +227,31 @@
            })
 		</script>
 	</body>
+
+
+	<script>
+        var infostr = sessionStorage.obj;
+        var obj = JSON.parse(infostr);
+        console.log(obj.type);
+        $("#reportbutton").click(function () {
+
+            $.ajax({
+                    type: "post",
+                    url: "/userreport",
+                    data: {
+                        userid: obj.user.userId,
+                       reportname: $("#report").val()
+
+                    },
+                    dataType: "json",
+                    async: false,
+                    success: function (res) {
+                        alert("反馈成功");
+
+                    }
+                }
+            )
+        })
+	</script>
+
 </html>

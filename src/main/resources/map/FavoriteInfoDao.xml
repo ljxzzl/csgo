@@ -17,6 +17,9 @@
     from favorite_info
     where favorite_id = #{favoriteId,jdbcType=INTEGER}
   </select>
+  <select id="search" parameterType="Object" resultMap="BaseResultMap">
+    select * from favorite_info where favorite_user_id=#{parm,jdbcType=INTEGER}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from favorite_info
     where favorite_id = #{favoriteId,jdbcType=INTEGER}

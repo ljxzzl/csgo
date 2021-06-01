@@ -97,6 +97,8 @@
       <if test="userDetail != null">
         #{userDetail,jdbcType=VARCHAR},
       </if>
+
+
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="UserInfo">
@@ -123,7 +125,14 @@
       <if test="userDetail != null">
         user_detail = #{userDetail,jdbcType=VARCHAR},
       </if>
+      <if test="userSteamId != null">
+        user_steam_id = #{userSteamId,jdbcType=VARCHAR},
+      </if><if test="userSteamKey != null">
+      user_steam_key = #{userSteamKey,jdbcType=VARCHAR},
+    </if>
+
     </set>
+
     where user_id = #{userId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="UserInfo">
@@ -137,7 +146,6 @@
       user_detail = #{userDetail,jdbcType=VARCHAR},
      user_steam_id=#{userSteamId,jdbcType=VARCHAR},
      user_steam_key=#{userSteamKey,jdbcType=VARCHAR}
-
     where user_id = #{userId,jdbcType=INTEGER}
   </update>
 </mapper>

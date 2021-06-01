@@ -4,6 +4,7 @@ import com.example.demo.dao.AdminInfoDao;
 import com.example.demo.dao.IndentInfoDao;
 import com.example.demo.dao.OrnamentInfoDao;
 import com.example.demo.dao.UserInfoDao;
+import com.example.demo.pojo.ClassInfo;
 import com.example.demo.pojo.IndentInfo;
 import com.example.demo.pojo.OrnamentInfo;
 import com.example.demo.pojo.UserInfo;
@@ -21,12 +22,17 @@ public class IdentIpl implements indentService {
     @Autowired
     OrnamentInfoDao ornament;
     @Override
-    public int addIndent(OrnamentInfo ornament, UserInfo user, IndentInfo indent) {
-        return 0;
+    public int addIndent(IndentInfo indent) {
+        return  indentInfoDao.insert(indent);
     }
 
     @Override
     public List<IndentInfo> getIdentList() {
         return  indentInfoDao.getIdentList();
+    }
+
+    @Override
+    public List<IndentInfo> getUserIndentList(int s) {
+        return indentInfoDao.search(s);
     }
 }

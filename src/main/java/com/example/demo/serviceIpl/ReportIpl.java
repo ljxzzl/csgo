@@ -23,5 +23,15 @@ public class ReportIpl implements classService {
         return  reportDao.updateByPrimaryKey(classInfo);
     }
 
+    @Override
+    public List<ClassInfo> getUserReportList(int s) {
+        return reportDao.search(s);
+    }
+
+    @Override
+    public int insert(ClassInfo report) {
+        return reportDao.insert(report);
+    }
+
 
 }
