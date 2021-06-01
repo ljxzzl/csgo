@@ -329,9 +329,11 @@
 					  </select>
 				  </td>
 			  </tr>
-			  <td>价格<br><input id="price" type="text" class="textBox length-middle" value=""/></td>
+			  <td><br>价格<br>
+				  <input id="price" type="text" class="textBox length-middle" value=""/></td>
 			  <td style="text-align:right;"></td>
-			  <td>  <br><button class="tdBtn" id="userUpdate">提交</button></td>
+			  <td>  <br>
+				  <button class="tdBtn" id="userUpdate" type="submit">提交</button></td>
 			  </tr>
 
 			  <div class="product-images">
@@ -402,7 +404,6 @@
         console.log(url);
         var id = url.split("=")[1];
         console.log(id);
-        alert(id);
         window.onload=( function () {
             $.ajax({
                     type: "post",
@@ -477,11 +478,10 @@
                 }
             )
 
-		})
-
-
-        $("#userUpdate").click(function () {
-
+		});
+        var oDiv=document.getElementById("userUpdate");
+        oDiv.onclick=(function(){
+            alert("update");
             $.ajax({
                     type: "post",
                     url: "/updateuserornament",
@@ -489,12 +489,11 @@
                         ornaamentid: id,
                         status: $('#detail option:selected').val(),
                         price: $('#price').val()
-
                     },
                     dataType: "json",
                     async: false,
                     success: function (res) {
-                        alert(id);
+                        alert("update");
 
                     }
                 }
