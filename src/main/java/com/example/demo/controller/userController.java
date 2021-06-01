@@ -78,7 +78,6 @@ public class userController {
         } else
 
             resultVO.setMsg("未注册");
-        System.out.print(user);
         return resultVO;
     }
 
@@ -206,10 +205,14 @@ public class userController {
     public ResultVO stock_ornament(@RequestParam(value = "userid", required = true, defaultValue = "") Integer userid
                                    ) throws MalformedURLException {
         UserInfo user = (UserInfo) userService.selectByPrimaryKey(userid);
+        System.out.print("检视库存啊"+user.getUserSteamId());
         ResultVO resultVO = new ResultVO();
+
         if(user.getUserSteamId()!=null)
         {
-            String str=String.format("http://steamcommunity.com/profiles/%s/inventory/json/%s/%s/", user.getUserSteamId(), 730, 2);
+            String str=String.format("https://steamcommunity.com/profiles/76561198426420437/inventory/json/730/2");
+
+            System.out.println(str);
             String json=getdata(str);
             System.out.println("stock");
             System.out.println(json);
@@ -234,6 +237,7 @@ public class userController {
                 ornamentInfo.setOrnamentClass(type);
                 String image="http://steamcommunity-a.akamaihd.net/economy/image/"+icon_url;
                 ornamentInfo.setOrnamentImage(image);
+                ornamentInfo.setOrnamentCount(userid.toString());
                 ornamentInfo.setOrnamentCount(userid.toString());
                 ornamentInfo.setOrnamentStatus("用户库存中");
                 ornamentService.addOrnament(ornamentInfo);

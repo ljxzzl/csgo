@@ -61,16 +61,18 @@ public class DemoApplication {
                 JSONObject o = (JSONObject) rgDescriptions.get(s);
                 String name = (String) o.get("name");
                 String type = (String) o.get("type");
-                String icon_url = (String) o.get("icon_url");
-                System.out.println(name);
-                System.out.println(type);
-                System.out.println(icon_url);
-                System.out.println();
+//                String icon_url = (String) o.get("icon_url");
+//                System.out.println(name);
+//                System.out.println(type);
+//                System.out.println(icon_url);
+//                System.out.println();
             }
 
 
 
 
+//        String str=String.format("http://steamcommunity.com/profiles/%s/inventory/json/%s/%s","76561198431360208", 730, 2);
+//        System.out.print(str);
     }
 
 
