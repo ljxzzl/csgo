@@ -210,7 +210,7 @@ public class userController {
 
         if(user.getUserSteamId()!=null)
         {
-            String str=String.format("http://steamcommunity.com/profiles/%s/inventory/json/%s/%s/", user.getUserSteamId(), 730, 2);
+            String str=String.format("http://steamcommunity.com/profiles/%s/inventory/json/%s/%s", user.getUserSteamId(), 730, 2);
             String json=getdata(str);
             System.out.println("stock");
             System.out.println(json);

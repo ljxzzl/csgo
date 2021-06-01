@@ -25,8 +25,8 @@ public class DemoApplication {
         System.out.print("http://localhost:8080/accountPage/index.html\n");
         System.out.print("http://localhost:8080/accountPage/login.html\n");
 
-
-
+        String str=String.format("http://steamcommunity.com/profiles/%s/inventory/json/%s/%s","76561198431360208", 730, 2);
+        System.out.print(str);
     }
 
 
