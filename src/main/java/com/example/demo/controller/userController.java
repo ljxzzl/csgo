@@ -164,7 +164,7 @@ public class userController {
         } else {
             resultVO.setMsg("未充值");
         }
-        if (user != null) {
+        if (user!= null) {
             json.put("user", user);
             resultVO.setData(json);
         }
@@ -203,8 +203,8 @@ public class userController {
     }
 
     @PostMapping (value = "/stock_ornament")//检测库存+到数据库
-    public ResultVO stock_ornament(@RequestParam(value = "userid", required = true, defaultValue = "") Integer userid,
-                                   HttpServletRequest request) throws MalformedURLException {
+    public ResultVO stock_ornament(@RequestParam(value = "userid", required = true, defaultValue = "") Integer userid
+                                   ) throws MalformedURLException {
         UserInfo user = (UserInfo) userService.selectByPrimaryKey(userid);
         ResultVO resultVO = new ResultVO();
         if(user.getUserSteamId()!=null)
@@ -368,9 +368,6 @@ public class userController {
         }
         return resultVO;
 
-
-
-
     }
 
 
@@ -431,6 +428,7 @@ public class userController {
                                    ) {
         ResultVO resultVO = new ResultVO();
      OrnamentInfo ornamentInfo=new OrnamentInfo();
+     System.out.print("用户更改商品"+status);
      ornamentInfo.setOrnamentId(ornamentid);
      ornamentInfo.setOrnamentStatus(status);
      ornamentInfo.setOrnamentPrice(price);
@@ -468,7 +466,26 @@ public class userController {
     }
 
 
+    @PostMapping(value = "/exchange")//交易
+    public ResultVO exchange(@RequestParam(value = "ornamentid", required = true, defaultValue = "")int ornamentid) {
+        ResultVO resultVO = new ResultVO();
+        System.out.print("ornamentid测试数据"+ornamentid);
+        OrnamentInfo ornamentInfo=ornamentService.selectByPrimaryKey(ornamentid);
+        UserInfo     UserInfo= userService.selectByPrimaryKey(Integer.parseInt(ornamentInfo.getOrnamentCount()));
+        Map json = new HashMap();
+        json.put("OrnamentChange",ornamentInfo);
+        json.put("UserDetail",UserInfo);
+        if ( ornamentInfo!=null )
+        {  resultVO.setData(json);
+            resultVO.setMsg("点击交易");
+        }
+        else
+        {
+            resultVO.setMsg("交易失败");
+        }
 
+        return resultVO;
+    }
 
 
 }
